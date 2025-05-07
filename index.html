@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity Web Player | LotoAvatarLiveSync</title>
+
+  <script src="./microphone.js"></script>
+  <script src="./adapter.js"></script>
+
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('./TestBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+  }
+
+  #unity-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 580px;
+    height: 910px;
+    z-index: 10;
+  }
+
+  #unity-canvas {
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #unity-canvas:focus {
+    outline: none;
+    border: none;
+  }
+</style>
+
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas" width="580" height="910" tabindex="-1"></canvas>
+  </div>
+
+  <script src="Build/BuildWebGL.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      arguments: [],
+      dataUrl: "Build/BuildWebGL.data",
+      frameworkUrl: "Build/BuildWebGL.framework.js",
+      codeUrl: "Build/BuildWebGL.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "IMORI STUDIO Srl",
+      productName: "Loto Studio",
+      productVersion: "0.1.0",
+      webglContextAttributes: {
+        alpha: true,
+        premultipliedAlpha: false
+      }
+    });
+  </script>
+</body>
+</html>
