@@ -6,6 +6,7 @@ body {
   height: 100%;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
+  background: transparent !important;
 }
 
 #unity-canvas {
