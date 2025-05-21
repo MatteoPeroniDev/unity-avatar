@@ -66,4 +66,5 @@
   height: 40px;
   border: none;
   cursor: pointer;
+  z-index: 10;
 }
