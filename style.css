@@ -25,6 +25,21 @@ body {
   border: none;
 }
 
+#unity-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  display: none; /* Partenza nascosta */
+}
+
+
 .switch-on-avatar {
   display: flex;
   align-items: center;
