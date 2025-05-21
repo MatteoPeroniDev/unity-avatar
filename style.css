@@ -8,6 +8,7 @@ body {
   justify-content: center;
   width: 80px;
   height: 80px;
+  flex-shrink: 0;
   border-radius: 100%;
   background: url('avatar-placeholder.jpg') no-repeat center center;
   background-size: cover;
@@ -26,6 +27,7 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 20;
+  max-width: 300px;
 }
 
 .switch-on-text {
@@ -35,6 +37,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   color: #333;
+  text-align: center;
   opacity: 100%;
   transition: opacity 0.3s ease-in-out;
 }
