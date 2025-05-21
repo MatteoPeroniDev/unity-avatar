@@ -1,5 +1,28 @@
+html,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
+}
+
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#unity-canvas:focus {
+  outline: none;
+  border: none;
 }
 
 .switch-on-avatar {
