@@ -36,17 +36,28 @@
   </div>
 
   <div id="unity-container">
+
     <button class="switch-off-avatar">
       <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
         <path d="M17 9.5L12 14.5L7 9.5" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </button>
+
+    <div id="loading-indicator">
+      <div class="spinner"></div>
+      <p>Caricamento avatar in corso...</p>
+    </div>
+
     <canvas id="unity-canvas" tabindex="-1"></canvas>
   </div>
+
 
   <script src="Build/BuildWebGL.loader.js"></script>
 
   <script>
+    const loadingIndicator = document.getElementById("loading-indicator");
+    loadingIndicator.style.display = "flex"; // Mostra lo spinner
+
     createUnityInstance(document.querySelector("#unity-canvas"), {
       arguments: [],
       dataUrl: "Build/BuildWebGL.data",
@@ -60,6 +71,11 @@
         alpha: true,
         premultipliedAlpha: false
       }
+    }).then((unityInstance) => {
+      loadingIndicator.style.display = "none"; // Nasconde lo spinner
+    }).catch((message) => {
+      alert("Errore nel caricamento dell'avatar: " + message);
+      loadingIndicator.style.display = "none";
     });
 
     const closeTextIcon = document.querySelector(".close-text-icon");
@@ -77,7 +93,6 @@
       container.style.pointerEvents = "auto";
     });
 
-
     buttonSwitchOff.addEventListener("click", function () {
       switchOnContainer.style.display = "flex";
       container.style.display = "none";
@@ -85,7 +100,6 @@
       container.style.height = "0";
       container.style.pointerEvents = "none";
     });
-
 
     closeTextIcon.addEventListener("click", function () {
       switchOnText.style.opacity = "0";
