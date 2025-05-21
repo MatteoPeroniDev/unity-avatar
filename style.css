@@ -1,0 +1,69 @@
+.switch-on-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: url('avatar-placeholder.jpg') no-repeat center center;
+  background-size: cover;
+  border: 4px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.switch-on-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.switch-on-text {
+  background-color: #fff;
+  padding: 4px 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+  opacity: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.switch-on-text .close-text-icon {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.switch-off-avatar {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  padding: 1px;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
