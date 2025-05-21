@@ -86,6 +86,7 @@
     const container = document.getElementById("unity-container");
 
     buttonSwitchOn.addEventListener("click", function () {
+      window.parent.postMessage({ type: "AVATAR_OPEN" }, "*");
       switchOnContainer.style.display = "none";
       container.style.display = "block";
       container.style.width = "100%";
@@ -94,6 +95,7 @@
     });
 
     buttonSwitchOff.addEventListener("click", function () {
+      window.parent.postMessage({ type: "AVATAR_CLOSED" }, "*");
       switchOnContainer.style.display = "flex";
       container.style.display = "none";
       container.style.width = "0";
